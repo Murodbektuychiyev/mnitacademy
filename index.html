@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MN IT Academy — IT Sohasida Karyerangizni Boshlang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/MN-Favicon.png">
+    <meta name="description" content="Professional testlar va sifatli kurslar orqali o'zingizga mos IT kasbini toping.">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<div class="header-wrapper">
+    <div class="container">
+        <header class="header">
+            <a href="#" class="logo">
+                <img src="../images/MN-Favicon.png" alt="MN IT Academy Logo">
+                MN IT Academy
+            </a>
+            <nav class="nav">
+                <a href="#" class="active-link">Bosh sahifa</a>
+                <a href="#">Testlar</a>
+                <a href="#">Kurslar</a>
+                <a href="#">Kasblar</a>
+                <a href="#">Biz haqimizda</a>
+            </nav>
+            
+            <div class="header-actions">
+                <button id="toggle-sound" class="btn btn-sound-control" data-text="🔇 Ovozni yoqish">
+                    🔇 Ovozni yoqish
+                </button> 
+            </div>
+            
+        </header>
+    </div>
+</div>
+
+<div class="hero-wrapper">
+    <video autoplay muted loop id="background-video" preload="auto">
+        <source src="../videos/Technology_Looped_Background.mp4" type="video/mp4">
+        Sizning brauzeringiz video tagini qo'llab-quvvatlamaydi.
+    </video>
+    
+    <div class="container">
+        <main class="hero-section">
+            <div class="hero-left">
+                <h1>IT Sohasida Karyerangizni Boshlang</h1>
+                <p>Professional testlar orqali o'zingizga mos IT kasbni toping. Sifatli kurslar va amaliy mashg'ulotlar bilan bilimingizni oshiring.</p>
+                
+                <div class="cta-row">
+                    <a href="./pages/login.html" class="btn btn-primary">Tizimga kirish</a>
+                    <a href="./pages/register.html" class="btn btn-secondary">Ro'yxatdan o'tish</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="image-card">
+                    <img src="../images/coding-laptop.png" alt="Dasturlash interfeysi ko'rsatilgan noutbuk">
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<section class="stats-banner">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3 id="stat1" data-target="5000">0</h3>
+                <p>Faol O'quvchilar</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat2" data-target="50">0</h3>
+                <p>Professional Kurslar</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat3" data-target="100">0</h3>
+                <p>IT Testlar</p>
+            </div>
+            <div class="stat-item">
+                <h3 id="stat4" data-target="95">0</h3>
+                <p>Muvaffaqiyat Darajasi</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        
+        <div class="features-header-content">
+            
+            <div class="features-image-container">
+                 <img src="../images/MN-IT-Academy-logo.png" alt="MN IT Academy talabalari darsda">
+            </div>
+            
+            <div class="features-text-content">
+                <h2>Nega MN IT Academy?</h2>
+                <p>IT sohasida muvaffaqiyatli karyera qurish uchun zarur bo'lgan barcha imkoniyatlar — faqatgina bilim berish emas, balki amaliy tajriba va aniq yo'nalishni ta'minlashga qaratilganmiz.</p>
+                <a href="./about.html" class="btn btn-primary" style="margin-top: 15px;">Ko'proq ma'lumot olish</a>
+            </div>
+            
+        </div>
+        
+        <div class="features-grid-wrapper">
+            <div class="grid">
+                
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 10 7 8"></polyline></svg>
+                    </div>
+                    <h3>Professional Testlar</h3>
+                    <p>IT soha bo‘yicha to‘liq testlar orqali bilimingizni tekshiring va o‘z yo‘nalishingizni toping.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5V20M12 12V3M12 3L9 6M12 3L15 6M20 12H4M20 12L17 9M20 12L17 15"></path><circle cx="12" cy="18" r="4"></circle></svg>
+                    </div>
+                    <h3>Kasb Tavsiyasi</h3>
+                    <p>Test natijalariga ko‘ra sizga eng mos keladigan IT kasbni koeffitsiyent asosida aniqlang.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    </div>
+                    <h3>Sifatli Kurslar</h3>
+                    <p>Tajribali ustozlar tomonidan tayyorlangan amaliy darslar va kurslar.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 4.5l-2.5-2.5-3 3-5 5-5-5-3 3 2.5 2.5-3 3-2.5-2.5-3 3-2.5-2.5-3 3"></path><path d="M12 21l-3-3-5 5-3-3 2.5-2.5-3 3-2.5-2.5-3 3"></path><path d="M2 12l-3-3-5 5-3-3 2.5-2.5-3 3-2.5-2.5-3 3"></path></svg>
+                    </div>
+                    <h3>Sertifikatlar</h3>
+                    <p>Kursni muvaffaqiyatli yakunlagach rasmiy sertifikat oling.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="courses-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Bizdagi Kurslar Yo'nalishlari</h2>
+            <p>Faol o'quvchilar tomonidan eng ko'p tanlanadigan va ish bozorida talab yuqori bo'lgan asosiy kurslar</p>
+        </div>
+        
+        <div class="course-grid">
+            
+            <div class="course-card">
+                <div class="course-icon">🚀</div>
+                <h4>Frontend Development</h4>
+                <p>Zamonaviy va interaktiv foydalanuvchi interfeyslarini yaratish (HTML, CSS, JavaScript, React).</p>
+                <span class="level-tag">Boshlang'ich/O'rta</span>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">⚙️</div>
+                <h4>Backend Development</h4>
+                <p>Server logikasi, ma'lumotlar bazasi va API'lar bilan ishlash (Node.js, Express, PostgreSQL).</p>
+                <span class="level-tag">O'rta/Murakkab</span>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📱</div>
+                <h4>Mobile Development</h4>
+                <p>Android va iOS uchun yuqori unumli mobil ilovalarni yaratish (Flutter/Dart).</p>
+                <span class="level-tag">Boshlang'ich</span>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🧠</div>
+                <h4>Data Science & AI</h4>
+                <p>Ma'lumotlar tahlili, Machine Learning va Sun'iy Intellekt modellarini qurish (Python, Pandas).</p>
+                <span class="level-tag">Murakkab</span>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🎨</div>
+                <h4>UI/UX Design</h4>
+                <p>Foydalanuvchi tajribasi va interfeysining vizual jihatlarini loyihalash (Figma, Adobe XD).</p>
+                <span class="level-tag">Boshlang'ich</span>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">📊</div>
+                <h4>IT Project Management</h4>
+                <p>IT loyihalarni boshqarish, Agile va Scrum metodologiyalari bilan tanishish.</p>
+                <span class="level-tag">O'rta</span>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="career-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>IT Karyera Yo'llari</h2>
+            <p>Sizni kelajakda kutayotgan eng talabgir va yuqori daromadli IT kasblari</p>
+        </div>
+        
+        <div class="career-grid">
+            
+            <div class="career-card">
+                <div class="career-icon">💻</div>
+                <h4>Full-Stack Developer</h4>
+                <p>Ham frontend, ham backendni boshqaradigan, loyihaning barcha qismini yaratuvchi mutaxassis.</p>
+            </div>
+
+            <div class="career-card">
+                <div class="career-icon">🔬</div>
+                <h4>Data Scientist (Ma'lumotlar tahlilchisi)</h4>
+                <p>Katta ma'lumotlar to'plamini tahlil qilib, biznes qarorlari uchun prognozlar qiluvchi kasb.</p>
+            </div>
+
+            <div class="career-card">
+                <div class="career-icon">🛠️</div>
+                <h4>DevOps Engineer</h4>
+                <p>Dasturlash va IT operatsiyalari o'rtasidagi aloqani optimallashtiruvchi avtomatlashtirish mutaxassisi.</p>
+            </div>
+            
+            <div class="career-card">
+                <div class="career-icon">🔍</div>
+                <h4>QA Engineer (Sifatni ta'minlash)</h4>
+                <p>Dasturiy ta'minotdagi xatolarni aniqlash va mahsulot sifatini kafolatlash bilan shug'ullanadi.</p>
+            </div>
+            
+            <div class="career-card">
+                <div class="career-icon">☁️</div>
+                <h4>Cloud Architect</h4>
+                <p>Kompaniyaning bulutli (Cloud) infratuzilmasini loyihalashtirish va boshqarish.</p>
+            </div>
+
+            <div class="career-card">
+                <div class="career-icon">🛡️</div>
+                <h4>Kiberxavfsizlik Mutaxassisi</h4>
+                <p>Tizimlarni tashqi hujumlardan himoya qilish strategiyalarini ishlab chiqish va amalga oshirish.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="online-resources-section">
+    <div class="container">
+        <div class="section-title">
+            <h2 style="color: var(--primary-blue); font-weight: 800; letter-spacing: 2px;">ONLAYN RESURSLAR</h2>
+            <p style="color: var(--text-dark);">IT o‘rganish uchun bepul resurslar to'plami</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <img src="./images/it-istedod.jpg" alt="Ibrat farzandlari logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">Barcha resurslar</h4>
+                <p>Milliy ta'lim resurslari.</p>
+            </div>
+            
+            <div class="resource-card">
+                <img src="./images/ITCommunityofUzbekistan.png" alt="IT Community of Uzbekistan logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">IT Community of Uzbekistan</h4>
+                <p>Mamlakatdagi eng yirik IT jamiyati, mutaxassislar va tadbirkorlarni birlashtiradi.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/onemillionuzbekcoders.png" alt="One Million Uzbek Coders logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">One Million Uzbek Coders</h4>
+                <p>8 ta bepul kurs va 10,000 dan ortiq kurslarga maxsus narxlarda kirish imkoniyati.</p>
+            </div>
+            
+            <div class="resource-card">
+                <img src="./images/beshmillionaileaders.jpg" alt="AI Leaders of Uzbekistan logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">AI Leaders of Uzbekistan</h4>
+                <p>Sun'iy intellekt, dasturlash va raqamlashtirish sohalarida onlayn ta'lim oling.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/ITtalimuyushmasi.svg" alt="IT ta'lim uyushmasi logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">IT ta'lim uyushmasi</h4>
+                <p>AKT sohasidagi ta'limni rivojlantirishga qaratilgan notijorat tashkilot.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/ITStudy.png" alt="It Study onlayn platformasi logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">IT Study Online Platform</h4>
+                <p>Video montaj, mobilografiya, Premiere Pro, After Effects va Cinema 4D kabi kurslar.</p>
+            </div>
+            
+            <div class="resource-card">
+                <img src="./images/100-imkoniyat.png" alt="100 ta ta'lim imkoniyatlari logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">100 ta ta'lim imkoniyatlari</h4> 
+                <p>Yoshlarga zamonaviy kasblarni egallashi, axborot texnologiyalarini o'rganishi va xorijiy tillarga o'qitish bo'yicha 6 oygacha muddatli o'quv kurslar uchun har qanday yoshdagi fuqarolar ishtirok etishi mumkin.</p> 
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/ustozai.png" alt="Ustoz AI logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">Ustoz AI</h4>
+                <p>Ustoz AI — fan va zamonaviy kasblarni oʻrgatuvchi bepul videokurslar platformasi. Kategoriyalar: Matematika, Targeting, PR, HR kurslari va boshqalar.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/leader-online.png" alt="Leader Online logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">Leader Online Platformasi</h4>
+                <p>Endilikda online testlar, materiallar va video darsliklar, barchasi bir joyda. Platformamiz orqali mavzulashtirilgan testlarni va topshiriqlarni bepul bajaring.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/yandex-praktikum.png" alt="Praktikum logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">Yandex Praktikum</h4>
+                <p>Noldan boshlab kasbni o'zlashtiring. 109 ta kurs bilan o'z mutaxassisligingizni toping; Practicum PRO bilan o'sing va mahoratingizni oshiring. 118 ta kurs bilan mahoratingizni kengaytiring; IT sohasida diplom oling.</p>
+            </div>
+            
+            <div class="resource-card">
+                <img src="./images/21schools.png" alt="School 21 logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">School 21 Dasturlash Maktabi</h4>
+                <p>18 yoshdan oshgan barcha xohlovchilarga dasturlashni bepul o'rganishni taklif etadi. Oʻzbekistonda IT boʻyicha o'z malakangizni oshiring va mutaxassis bo'lib chiqing.</p>
+            </div>
+
+            <div class="resource-card">
+                <img src="./images/ibrat-farzandlari.jpg" alt="Ibrat farzandlari logosi" class="logo-img">
+                <h4 style="color: var(--primary-blue); font-weight: 600;">Ibrat farzandlari</h4>
+                <p>Interaktiv viktorinalar, qiziqarli videodarsliklar va ajoyib o‘rganuvchilar hamjamiyati bilan tillarni o‘rganishni boshlang.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container">
+        <h2>IT Sohasidagi Kelajagingiz Sizdan Bir Qadam Nari!</h2>
+        <p>Hozir ro'yxatdan o'ting va o'zingiz uchun eng mos yo'nalishni topish uchun bepul testni boshlang.</p>
+        <a href="./pages/register.html" class="btn btn-cta-blue">Bepul Karyerani Boshlash</a>
+    </div>
+</section>
+
+<section class="social-section">
+    <div class="container">
+        <h3>Bizni Ijtimoiy Tarmoqlarda Kuzating</h3>
+        
+        <div class="social-links">
+            <div class="social-link"><a href="#" target="_blank" title="Telegram"><span class="icon-label">✉️</span></a></div>
+            <div class="social-link"><a href="#" target="_blank" title="YouTube"><span class="icon-label">▶️</span></a></div>
+            <div class="social-link"><a href="#" target="_blank" title="Instagram"><span class="icon-label">📸</span></a></div>
+            <div class="social-link"><a href="#" target="_blank" title="Facebook"><span class="icon-label">🌐</span></a></div>
+            <div class="social-link"><a href="#" target="_blank" title="LinkedIn"><span class="icon-label">💼</span></a></div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        &copy; <span id="year"></span> MN IT Academy. Barcha huquqlar himoyalangan. | Xizmat ko'rsatish shartlari | Maxfiylik siyosati
+    </div>
+</footer>
+
+<script src="../js/introduction.js" defer></script>
+
+</body>
+</html>
