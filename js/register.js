@@ -1,10 +1,10 @@
 /**
  * =========================================================
- * MN IT Academy - Login/Register Sahifasi JS Mantig'i
+ * MN IT Academy - Login/Register Sahifasi JS Mantig'i (YANGILANGAN)
  * =========================================================
  * * Vazifalar:
  * 1. O'zbekiston viloyatlari ro'yxatini "Select" maydoniga yuklash.
- * 2. Fon video pleerini boshqarish (Ovozni yoqish/o'chirish va IJRO).
+ * 2. Fon video pleerini boshqarish (Birinchi klik orqali ovozni yoqish).
  * */
 
 // O'ZBEKISTON VILOYATLARI RO'YXATI (Soddalashtirilgan)
@@ -29,20 +29,21 @@ const regionsList = [
  * Sahifa to'liq yuklangandan so'ng asosiy funksiyalarni ishga tushirish.
  */
 document.addEventListener('DOMContentLoaded', function() {
+    
     // --- ELEMENTLARNI ANIQLASH ---
     const regionSelect = document.getElementById('region');
     const video = document.getElementById('background-video');
     const toggleButton = document.getElementById('toggle-video-sound');
+    
+    // Yangi o'zgaruvchi: Birinchi klik sodir bo'lganligini kuzatish
+    let initialInteractionOccurred = false;
+
 
     // =========================================================
-    // 1. VILOYAT RO'YXATINI TO'LDIRISH FUNKSIYASI
+    // 1. VILOYAT RO'YXATINI TO'LDIRISH FUNKSIYASI - O'zgarishsiz
     // =========================================================
-    /**
-     * regionsList massividan olingan qiymatlar bilan <select id="region"> elementini to'ldiradi.
-     */
     const populateRegions = () => {
         if (!regionSelect) {
-            // Agar "region" select maydoni mavjud bo'lmasa (masalan, Login.html da)
             return; 
         }
         
@@ -67,55 +68,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // =========================================================
-    // 2. OVOZ BOSHQARUVI MANTIQI
+    // 2. OVOZ BOSHQARUVI MANTIQI (YANGILANGAN)
     // =========================================================
     if (video && toggleButton) {
         
-        // Autoplay xatoligini bartaraf etish uchun, odatda Chrome/Safari brauzerlari
+        // Dastlabki sozlash
+        video.muted = true;
+
+        // Video Autoplay
         video.play().catch(error => {
-            console.warn("Video autoplay bloklandi (Brauzer cheklovi). Foydalanuvchi o'zi ishga tushirishi mumkin:", error);
+            console.warn("Video autoplay bloklandi (Brauzer cheklovi).");
         });
 
+        // --- BOSH FUNKSIYALAR ---
+
         /**
-         * Ovoz tugmasining matnini (🔊/🔇) videoning joriy holatiga qarab yangilaydi.
+         * Tugmaning ichki matnini (🔊/🔇) videoning joriy holatiga qarab yangilaydi.
          */
         const updateButtonText = () => {
             toggleButton.innerHTML = video.muted ? '🔇 Ovoz' : '🔊 Ovoz';
+            
+            // Agar video ijro etilmayotgan bo'lsa (va ovoz yoqiq bo'lsa), uni ishga tushirishga urinish
+            if (!video.muted && video.paused) {
+                 video.play().catch(e => console.error("Video ijrosini qayta boshlashda xatolik:", e));
+            }
         };
+        
+        /**
+         * Videoning ovoz holatini o'zgartiradi va tugma holatini yangilaydi.
+         */
+        const toggleVideoSound = (mutedState) => {
+            video.muted = mutedState;
+            updateButtonText();
+        }
         
         // Sahifa yuklanganda tugmani birinchi marta yangilash
         updateButtonText();
 
-        // Tugmani bosish hodisasini tinglash
-        toggleButton.addEventListener('click', () => {
-            // Ovoz holatini o'zgartirish
-            video.muted = !video.muted;
-            
-            // Tugma matnini yangilash
-            updateButtonText();
-            
-            // Agar video to'xtatilgan bo'lsa, uni ishga tushirish (Odatda, foydalanuvchi interaksiyasidan keyin ruxsat beriladi)
-            if (video.paused) {
-                video.play().catch(e => {
-                    console.error("Video ijrosini qayta boshlashda xatolik:", e);
-                });
+
+        // --- A. BIRINCHI INTERAKTSIYA (EKRANGA BOSISH) ---
+        /**
+         * Ekranning istalgan joyiga birinchi marta bosilganda ovozni yoqish uchun
+         * bir marta ishlatiladigan tinglovchi.
+         */
+        document.addEventListener('click', function handleInitialInteraction() {
+            if (!initialInteractionOccurred) {
+                
+                // Ovozni yoqish
+                toggleVideoSound(false); 
+                initialInteractionOccurred = true;
+                
+                // Bir marta ishlatilgandan so'ng, bu tinglovchini o'chiramiz
+                document.removeEventListener('click', handleInitialInteraction);
             }
         });
-    }
-    
-    // =========================================================
-    // 3. (QO'SHIMCHA) FORMADAN YUBORISH MANTIG'I
-    // =========================================================
-    
-    // Agar formani AJAX orqali yuborish kerak bo'lsa, bu yerga funksiya qo'shiladi:
-    /*
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Ma'lumotlarni yuborish logikasi (fetch/XMLHttpRequest)
-            console.log("Forma yuborildi...");
+        
+        // --- B. KEYINGI BOSHQARUV (TUGMA ORQALI) ---
+        
+        // Tugmani bosish hodisasini tinglash
+        toggleButton.addEventListener('click', (event) => {
+            
+            // Hodisaning butun dokumentga tarqalishini to'xtatish (muhim)
+            event.stopPropagation();
+            
+            if (initialInteractionOccurred) {
+                // Agar boshlang'ich interaksiya bo'lgan bo'lsa, tugma boshqaruvni o'z qo'liga oladi.
+                // Ovoz holatini teskarisiga o'zgartirish
+                toggleVideoSound(!video.muted);
+            } else {
+                // Agar hali birinchi interaksiya bo'lmagan bo'lsa (va tugma bosilgan bo'lsa)
+                // Ovozni yoqish va boshqaruvni tugmaga berish
+                toggleVideoSound(false);
+                initialInteractionOccurred = true;
+                document.removeEventListener('click', handleInitialInteraction);
+            }
         });
-    }
-    */
+
+    } 
 });

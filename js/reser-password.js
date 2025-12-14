@@ -1,10 +1,11 @@
 /**
  * =========================================================
- * MN IT Academy - Video Fon Boshqaruvi Mantig'i
+ * MN IT Academy - Video Fon Boshqaruvi Mantig'i (YANGILANGAN)
  * =========================================================
  * Bu fayl asosan quyidagi funksiyalarni bajaradi:
  * 1. Fon videosini avtomatik ishga tushirish (autoplay xatolarini hisobga olgan holda).
- * 2. Ovozni yoqish/o'chirish tugmasi holatini boshqarish va uning funksionalligini ta'minlash.
+ * 2. Birinchi foydalanuvchi interaksiyasi (ekranga bosish) orqali videoning ovozini yoqish.
+ * 3. Keyingi boshqaruvlarni faqat maxsus tugma ('toggle-video-sound') orqali ta'minlash.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,25 +14,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('background-video');
     const toggleButton = document.getElementById('toggle-video-sound');
 
+    // Yangi o'zgaruvchi: Birinchi klik sodir bo'lganligini kuzatish
+    let initialInteractionOccurred = false;
+
     // Agar ikkala element ham mavjud bo'lsa, mantiqni ishga tushiramiz
     if (video && toggleButton) {
+        
+        // Dastlabki sozlash: Brauzer qoidalariga rioya qilish uchun
+        video.muted = true;
         
         // =========================================================
         // 2. VIDEO AUTOPLAY MANTIQI
         // =========================================================
         
-        /**
-         * Video ijrosini boshlashga harakat qiladi. Brauzerlar ko'pincha ovozli videolarni
-         * avtomatik ishga tushirishni bloklaydi, shuning uchun 'play()' metodi Promise qaytaradi.
-         */
+        // Videoni avtomatik ishga tushirishga harakat qilamiz (ovozsiz holatda).
         video.play().catch(error => {
-            console.warn("Video autoplay bloklandi (Brauzer cheklovi):", error);
-            // Odatda, bu yerda foydalanuvchiga videoni qo'lda ishga tushirish taklif qilinadi.
+            console.warn("Video autoplay bloklandi (Brauzer cheklovi).");
+            // Agar bloklansa ham, foydalanuvchi interaksiyasini kutishda davom etamiz.
         });
 
         
         // =========================================================
-        // 3. OVOZ TUGMASINI BOSHQARISH FUNKSIYASI
+        // 3. OVOZNI BOSHQARISH FUNKSIYALARI
         // =========================================================
 
         /**
@@ -39,26 +43,59 @@ document.addEventListener('DOMContentLoaded', function() {
          */
         const updateButtonStatus = () => {
             toggleButton.innerHTML = video.muted ? '🔇 Ovoz' : '🔊 Ovoz';
+            
+            // Agar video ijro etilmayotgan bo'lsa (va ovoz yoqiq bo'lsa), uni ishga tushirishga urinish
+            if (!video.muted && video.paused) {
+                 video.play().catch(e => console.error("Video ijrosini qayta boshlashda xatolik:", e));
+            }
         };
         
         // Dastlabki yuklanishda tugma holatini o'rnatish
         updateButtonStatus();
 
-        // Tugmani bosish hodisasini tinglash
-        toggleButton.addEventListener('click', () => {
-            
-            // Ovoz holatini teskarisiga o'zgartirish (true -> false, false -> true)
-            video.muted = !video.muted;
-            
-            // Tugma matnini yangilash
+        /**
+         * Videoning ovoz holatini o'zgartiradi va tugma holatini yangilaydi.
+         */
+        const toggleVideoSound = (mutedState) => {
+            video.muted = mutedState;
             updateButtonStatus();
+        }
+
+        // --- A. BIRINCHI INTERAKTSIYA (EKRANGA BOSISH) ---
+        /**
+         * Ekranning istalgan joyiga birinchi marta bosilganda ovozni yoqish uchun
+         * bir marta ishlatiladigan tinglovchi.
+         */
+        document.addEventListener('click', function handleInitialInteraction() {
+            if (!initialInteractionOccurred) {
+                
+                // Ovozni yoqish
+                toggleVideoSound(false); 
+                initialInteractionOccurred = true;
+                
+                // Bir marta ishlatilgandan so'ng, bu tinglovchini o'chiramiz
+                document.removeEventListener('click', handleInitialInteraction);
+            }
+        });
+        
+        // --- B. KEYINGI BOSHQARUV (TUGMA ORQALI) ---
+        
+        // Tugmani bosish hodisasini tinglash
+        toggleButton.addEventListener('click', (event) => {
             
-            // Agar video oldin bloklangan yoki to'xtatilgan bo'lsa, uni ishga tushiramiz.
-            // Foydalanuvchi interaksiyasidan keyin brauzerlar ko'pincha ijroga ruxsat beradi.
-            if (video.paused) {
-                video.play().catch(e => {
-                    console.error("Video ijrosini qayta boshlashda xatolik:", e);
-                });
+            // Hodisaning butun dokumentga tarqalishini to'xtatish (muhim)
+            event.stopPropagation();
+            
+            if (initialInteractionOccurred) {
+                // Agar boshlang'ich interaksiya bo'lgan bo'lsa, tugma boshqaruvni o'z qo'liga oladi.
+                // Ovoz holatini teskarisiga o'zgartirish
+                toggleVideoSound(!video.muted);
+            } else {
+                // Agar hali birinchi interaksiya bo'lmagan bo'lsa (va tugma bosilgan bo'lsa)
+                // Ovozni yoqish va boshqaruvni tugmaga berish
+                toggleVideoSound(false);
+                initialInteractionOccurred = true;
+                document.removeEventListener('click', handleInitialInteraction);
             }
         });
 
