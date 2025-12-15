@@ -163,10 +163,11 @@ document.addEventListener('DOMContentLoaded', function() {
     music.volume = 0.4; 
     
     const playlist = [
-        "../music/jadidalarim.mp3", 
-        "../music/orqa-fon-musiqa.mp3", 
-        "../music/soy-boyida.mp3", 
-        "../music/yalla-music.mp3", 
+        "../music/jadidalarim.mp3",
+        "../music/orqa-fon-musiqa.mp3",
+        "../music/soy-boyida.mp3",
+        "../music/yalla-music.mp3",
+        "../music/uzbekistan-yoshlari.mp3"
     ];
     
     let currentTrackIndex = 0;
