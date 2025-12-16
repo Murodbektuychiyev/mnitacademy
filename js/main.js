@@ -1,10 +1,43 @@
-/* --- Birlashtirilgan JAVASCRIPT KODI (Faqat birinchi klik ovozni yoqadi, keyin tugma boshqaradi) --- */
+/* --- Birlashtirilgan JAVASCRIPT KODI (Statistika, Ovoz va Navigatsiya) --- */
 
 // Sahifa to'liq yuklangandan so'ng barcha funksiyalarni ishga tushirish
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========================================
-    // A. STATISTIKA HISOBLAGICH EFFEKTI (COUNTUP) - O'zgarishsiz
+    // ** YANGI LOGIKA QO'SHILDI: NAVIGATSIYA BOSHQARUVI **
+    // ========================================
+    const navToggle = document.getElementById('nav-toggle'); // Hamburger tugmasi
+    const nav = document.getElementById('main-nav');         // Navigatsiya menyusi
+
+    if (navToggle && nav) {
+        
+        // 1. Hamburger tugmasi bosilganda menyuni ochish/yopish
+        navToggle.addEventListener('click', function() {
+            // CSS dagi '.nav.open' klassini qo'shish yoki olib tashlash
+            nav.classList.toggle('open'); 
+            
+            // Ikonkani o'zgartirish (Hamburger <-> X)
+            const icon = navToggle.querySelector('i');
+            if (nav.classList.contains('open')) {
+                icon.className = 'fa fa-times'; // Menyuni yopish uchun 'X' ikonka
+            } else {
+                icon.className = 'fa fa-bars'; // Menyuni ochish uchun 'Hamburger' ikonka
+            }
+        });
+
+        // 2. Navigatsiya havolalaridan biri bosilganda menyuni yopish
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('open');
+                // Ikonkani 'Hamburger' holatiga qaytarish
+                navToggle.querySelector('i').className = 'fa fa-bars'; 
+            });
+        });
+    }
+
+
+    // ========================================
+    // A. STATISTIKA HISOBLAGICH EFFEKTI (COUNTUP)
     // ========================================
 
     function countUp(el) {
@@ -68,18 +101,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('toggle-sound');
     const videoElement = document.getElementById('background-video');
     
-    // YANGI O'ZGARUVCHI: Birinchi klik sodir bo'lganligini kuzatish
     let initialClickOccurred = false; 
     let isPlaying = false; 
 
-    // Tugma matnini va holatini yangilash funksiyasi
     const updateButtonState = (isMuted) => {
         const text = isMuted ? '🔇 Ovozni yoqish' : '🔊 Ovozni o\'chirish'; 
         
         if (toggleButton) {
             toggleButton.setAttribute('data-text', text); 
             
-            // Faqat musiqa ijro etilayotganda 'active' klassini qo'shish
             if (!isMuted && isPlaying) {
                 toggleButton.classList.add('active'); 
             } else {
@@ -90,26 +120,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ========================================
-    // C. FON VIDEO VA MUSIQA OVOZINI BOSHQARISH (YANGI MANTIQ)
+    // C. FON VIDEO VA MUSIQA OVOZINI BOSHQARISH
     // ========================================
     
-    // Fon video elementini boshlang'ich holatga sozlash
     if (videoElement) {
         videoElement.muted = true; 
     }
     
-    // Ovozni yoqish/o'chirish funksiyasi (Video va Musiqa uchun)
     const toggleSound = (mutedState) => {
         if (videoElement) {
             videoElement.muted = mutedState;
-            // Agar ovoz yoqilsa va video pauzada bo'lsa (bloklangan bo'lishi mumkin), ijro etishga urinish
             if (!mutedState && videoElement.paused) {
                 videoElement.play().catch(e => console.error("Video ijrosini boshlashda xatolik:", e));
             }
         }
         if (typeof music !== 'undefined') {
             music.muted = mutedState;
-            // Agar ovoz yoqilsa va musiqa pauzada bo'lsa, ijro etishga urinish
             if (!mutedState && music.paused) {
                 music.play().catch(e => console.error("Musiqa ijrosini boshlashda xatolik:", e));
             }
@@ -118,33 +144,23 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // 1. DOKUMENTGA BIRINCHI KLIK TINGLOVCHISI
-    // Ekranning istalgan joyiga birinchi marta bosish
     document.addEventListener('click', function handleInitialClick() {
         if (!initialClickOccurred) {
-            // Ovozni yoqish
             toggleSound(false); 
             initialClickOccurred = true;
-            
-            // Bir marta ishlatilgandan so'ng, bu tinglovchini o'chiramiz
             document.removeEventListener('click', handleInitialClick); 
         }
     });
 
     // 2. TUGMA ORQALI BOSHQARUV
-    // Keyingi boshqaruvlar faqat tugma orqali
     if (toggleButton) {
         toggleButton.addEventListener('click', (event) => {
-            // Hodisaning butun dokumentga tarqalishini to'xtatish
             event.stopPropagation();
             
-            // Agar birinchi klik bo'lgan bo'lsa, tugma boshqaruvni o'z qo'liga oladi
             if (initialClickOccurred) {
-                // Hozirgi holatni teskari qilib ovozni o'zgartirish
                 const newMutedState = videoElement ? !videoElement.muted : !music.muted;
                 toggleSound(newMutedState);
             } else {
-                 // Agar hali birinchi klik bo'lmagan bo'lsa, bu tugma kliki initialClick hodisasini ishga tushirishi kerak.
-                 // toggleSound(false) chaqiriladi.
                  toggleSound(false);
                  initialClickOccurred = true;
                  document.removeEventListener('click', handleInitialClick);
@@ -154,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ========================================
-    // D. PLAYLIST BOSHQARUVI - O'zgarishsiz (Musiqani ijro etish logikasi)
+    // D. PLAYLIST BOSHQARUVI
     // ========================================
 
     const music = new Audio();

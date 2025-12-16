@@ -1,5 +1,3 @@
-/* --- 1. GLOBALLAR VA O'ZGARUVCHILAR --- */
-
 /* Orbitron va Inter shriftlarini import qilish */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;700&display=swap');
 
@@ -31,6 +29,11 @@ html, body {
     overflow-x: hidden; /* Gorizontal skrollni oldini olish */
 }
 
+/* Sayt bo'ylab barcha skroll harakatlarini silliq qiladi */
+html {
+    scroll-behavior: smooth;
+}
+
 /* --- SARLAVHALAR (H-lar) UCHUN ORBITRON SHIRFTINI O'RNATISH --- */
 h1, h2, h3, h4, .logo {
     font-family: var(--font-heading); 
@@ -45,14 +48,14 @@ a {
     transition: color 0.2s;
 }
 a:hover {
-    color: #37e42d; /* Qo'shimcha rang */
+    color: #dcd6d6; /* Qo'shimcha rang */
 }
 
 /* Asosiy kontent konteyneri */
 .container {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* --- 2. HEADER VA NAVIGATSIYA STILI --- */
@@ -67,14 +70,13 @@ a:hover {
 
 /* header ichidagi navigatsiya havolalari uchun stil */
 .header .nav a {
-    /* ... mavjud stillar qoladi ... */
     transition: color 0.3s ease; 
 }
 
 /* Faol havolani ko'k qilish */
 .header .nav .active-link {
-    color: var(--primary-blue) !important; /* Faol havolani doimiy ko'k rangda belgilash */
-    font-weight: 700; /* Qo'shimcha urg'u berish */
+    color: var(--primary-blue);
+    font-weight: 700;
 }
 
 .header {
@@ -83,6 +85,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -281,12 +284,11 @@ a:hover {
 .btn-primary {
     background-color: var(--primary-blue);
     color: white;
-    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
 }
 .btn-primary:hover {
     background-color: #357ae8;
     transform: translateY(-3px); 
-    box-shadow: 0 8px 18px rgba(66, 133, 244, 0.4);
+    border-radius: 14px;
 }
 .btn-secondary {
     background-color: transparent; 
@@ -297,6 +299,8 @@ a:hover {
     border-color: white;
     color: white;
     background-color: rgba(66, 133, 244, 0.4);
+    transform: translateY(-3px); 
+    border-radius: 14px;
 }
 
 /* Hero Rasmi joylashuvi */
@@ -333,7 +337,7 @@ a:hover {
 
 .section-title {
     text-align: center;
-    padding: 40px 0 50px 0;
+    padding: 30px 0 50px 0;
 }
 .section-title h2 {
     font-size: 2.5rem;
@@ -351,29 +355,30 @@ a:hover {
 /* --- 6. FEATURES SECTION (Nega MN IT Academy?) --- */
 
 .features-section {
-    padding: 80px 0;
-    background-color: white; 
+    padding: 70px 0;
+    background-color: white;
 }
 .features-header-content {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 .features-image-container {
     flex-basis: 40%;
     flex-shrink: 0;
     max-width: 400px;
+    cursor:pointer;
 }
 .features-image-container img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .features-image-container img:hover {
-    transform: scale(1.01); 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
 }
 .features-text-content {
     flex-basis: 60%;
@@ -406,7 +411,8 @@ a:hover {
     border: 1px solid var(--border-color);
     transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
     text-align: center; 
-    min-height: 250px; 
+    min-height: 250px;
+    cursor: pointer;
 }
 .feature-card:hover {
     box-shadow: 0 8px 25px rgba(66, 133, 244, 0.15);
@@ -461,6 +467,7 @@ a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-left: 5px solid var(--primary-blue); 
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 .course-card:hover {
     transform: translateY(-5px);
@@ -524,7 +531,8 @@ a:hover {
     justify-content: space-between;
     align-items: center; 
     text-align: center;
-    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s; 
+    transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+    cursor: pointer;
 }
 .resource-card:hover {
     box-shadow: 0 8px 30px rgba(66, 133, 244, 0.1);
@@ -565,6 +573,7 @@ a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border-left: 5px solid var(--success-green); /* Yashil chegara */
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 .career-card:hover {
     transform: translateY(-5px);
@@ -654,11 +663,188 @@ a:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(66, 133, 244, 0.5); 
 }
+/* =======================================
+   5. PROJECT STORY (Noldan qahramonlikkacha)
+   ======================================= */
+.story-section {
+    padding: 40px 0; /* Bo'shliqni oshirish */
+    background-color: var(--color-white);
+}
+
+.story-content-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    cursor: pointer;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Yumaloq burchaklarni oshirish */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Boshlang'ich kuchli soya */
+    display: block;
+    border: 4px solid transparent; 
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Reaktiv o'tish */
+}
+
+/* Rasmga hover stili: Dramatik ta'sir */
+.story-image:hover img {
+    transform: scale(1.05); /* Kuchliroq kattalashtirish */
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5); /* Juda chuqur va dramatik soya */
+    border-color: var(--primary-blue);
+}
+
+.story-text {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.story-text h2 {
+    font-size: 2.8rem; /* Sarlavhani kattalashtirish */
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.story-text p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: var(--text-dark); 
+}
+
+
+/* =======================================
+   6. CORE VALUES (Asosiy Qadriyatlar)
+   ======================================= */
+.core-values-section {
+    padding: 40px 0 80px 0;
+    background-color: var(--color-light-gray); 
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Bahorgi effekt uchun silliq o'tish */
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+}
+
+/* Kartochkaga hover stili: Kuchli effekt */
+.value-card:hover {
+    transform: translateY(-15px); /* Juda kuchli ko'tarilish */
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3); /* Kuchli soya */
+    border-color: var(--secondary-color); /* Chegarani sariq rangga o'zgartirish */
+}
+
+.value-card .icon {
+    font-size: 3.2rem; /* Ikonka hajmini oshirish */
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+}
+
+/* Ikonkaga hover stili: Rang va aylanma effekt */
+.value-card:hover .icon {
+    color: var(--secondary-color); 
+    transform: rotateY(360deg);
+}
+
+.value-card h3 {
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+
+/* =======================================
+   7. TEAM DETAILS (Bizning Jamoamiz)
+   ======================================= */
+.team-details-section {
+    padding: 10px 0 25px 0;
+    text-align:center;
+}
+
+.team-members-list {
+    display:flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+
+.member-card {
+    background: var(--color-white);
+    padding: 40px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+    cursor: default;
+    max-width: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Kartochkaga hover stili: Eng dramatik ta'sir */
+.member-card:hover {
+    transform: translateY(-12px); 
+    box-shadow: 0 25px 50px #3567C7;
+}
+
+.member-avatar {
+    border-radius: 50%; /* Dumaloq rasm */
+    width: 140px; /* Rasmni yanada kattalashtirish */
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    
+    /* Rangli animatsiya: Qalin va yaltiroq chegara */
+    border: 6px solid var(--primary-blue); 
+    box-shadow: 0 0 0 10px rgba(0, 96, 168, 0.3); 
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+    transform: scale(1);
+}
+
+/* Rasmga hover stili: Rangli, silliq burilish va kattalashish */
+.member-card:hover .member-avatar {
+    border-color: var(--secondary-color); 
+    transform: scale(1.15) rotate(-3deg); 
+    box-shadow: 0 0 0 10px rgba(255, 183, 3, 0.6); 
+}
+
+.member-card h4 {
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-top: 10px;
+}
+
+.member-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
 
 /* --- 12. SOCIAL MEDIA SECTION (Ijtimoiy tarmoqlar) --- */
 
 .social-section {
-    padding: 40px 0;
+    padding:25px 0;
     background-color: #3567C7; /* To'qroq ko'k */
     text-align: center;
 }
@@ -706,36 +892,108 @@ a:hover {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- 14. MEDIA QUERIES (RESPONSIVE DIZAYN) --- */
+/* =========================================================================
+   HAMBURGER VA NAVIGATSIYA STILI
+   ========================================================================= */
 
-/* PLANSHEYLAR UCHUN (980px gacha) */
-@media (max-width: 980px) {
-    /* HEADER: Mobil menyu tugmasi uchun joy ochamiz */
+/* Hamburger Icon (Nav-Toggle) uchun asosiy stillar */
+.nav-toggle {
+    display: none; /* Desktopda yashirin */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-white); 
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001; /* Doimo boshqa elementlar ustida turishi kerak */
+    line-height: 1; 
+    transition: color 0.3s ease;
+}
+
+.nav-toggle:hover {
+    color: var(--secondary-color);
+}
+
+/* Close Ikonka ('X') stili */
+.nav-toggle .fa-times {
+    font-size: 2rem; 
+}
+
+/* =========================================================================
+   RESPONSIVE MEDIA QUERIES (TO'LIQ BARCHA QISMLAR UCHUN)
+   ========================================================================= */
+
+/* PLANSHEYLAR UCHUN (Maks. 992px gacha) */
+@media (max-width: 992px) {
+    
+    /* --- 1. HEADER & MOBIL NAVIGATSIYA BOSHQARUVI --- */
+    
     .header {
-        /* Asosiy navigatsiya tugmalarini ko'rsatish uchun flex-direction: row saqlansin */
-        /* display: flex; joylashuvi saqlanadi */
+        display: flex; 
+        justify-content: space-between; /* Logo chapda, Tugmalar bloki o'ngda turadi */
         align-items: center;
-        padding: 15px 0; /* Paddingni biroz kichraytiramiz */
-    }
-
-    .nav { 
-        display: none; /* Navigatsiyani yashiramiz */
+        padding: 15px 0; 
     }
     
-    /* Mobil menyu (Burger) tugmasini qo'shish uchun HTMLda div.menu-toggle bo'lishi kerak */
+    .nav { 
+        display: none; /* Desktop navigatsiyasini yashirish */
+    }
+    
+    /* Hamburger ikonni ko'rsatish */
+    .nav-toggle {
+        display: block; 
+    }
+    
+    /* Ovoz va Hamburger joylashuvini boshqaruvchi qism */
     .header-actions {
-        display: flex; /* Asosiy header elementlari endi flexda */
+        display: flex; 
         align-items: center;
-        gap: 10px; /* Ovoz tugmasi va menyu orasidagi bo'shliq */
         
-        /* Faqatgina Ovoz tugmasi bo'lsa: */
-        /* flex-direction: row; va justify-content: flex-end; qo'shing */
+        /* MUHIM: Tugmalar tartibini teskari qilish (Ovoz tugmasi chaproqqa siljiydi) */
+        flex-direction: row-reverse; 
+        
+        /* Tugmalar orasidagi masofani oshirish */
+        gap: 30px; 
     }
     .btn-sound-control {
-        min-width: 140px; 
+        min-width: 120px; /* Planshet uchun kenglikni optimallashtirish */
     }
-
-    /* HERO SECTION */
+    
+    /* Mobil menyu (Nav) stili */
+    #main-nav.nav { 
+        display: flex; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        
+        /* OQ BLUR EFFEKTI (85PX) */
+        background-color: rgba(255, 255, 255, 0.15); 
+        backdrop-filter: blur(85px); 
+        -webkit-backdrop-filter: blur(85px); 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        
+        padding-top: 80px;
+        transition: right 0.4s ease-in-out;
+        z-index: 1000;
+    }
+    
+    /* Menyuni ochish */
+    #main-nav.nav.open {
+        right: 0; 
+    }
+    
+    .nav a {
+        color: var(--color-white); 
+        padding: 15px 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    
+    /* --- 2. HERO SECTION --- */
     .hero-section { 
         flex-direction: column; 
         text-align: center; 
@@ -748,8 +1006,9 @@ a:hover {
     }
     .hero-right { 
         width: 80%; 
-        max-width: 450px; /* O'lchamni biroz kattalashtirdik */
+        max-width: 450px; 
         order: 1; 
+        margin: 0 auto;
     }
     .hero-left h1 { 
         font-size: 2.5rem; 
@@ -758,21 +1017,36 @@ a:hover {
         justify-content: center; 
     }
     
-    /* GRID TIZIMLARI */
-    .grid { 
-        grid-template-columns: repeat(2, 1fr); 
+    /* --- 3. PROJECT STORY --- */
+    .story-content-wrapper {
+        flex-direction: column;
+        text-align: center;
     }
-    .course-grid, .resources-grid, .career-grid { 
+    .story-image, .story-text {
+        max-width: 100%;
+        flex: none;
+    }
+    .story-image {
+        order: 2;
+        margin-top: 30px;
+    }
+    .story-image img {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* --- 4. GRID TIZIMLARI (Umumiy) --- */
+    .grid, .course-grid, .resources-grid, .career-grid { 
         grid-template-columns: repeat(2, 1fr); 
     }
     
-    /* STATS */
+    /* --- 5. STATS --- */
     .stats-grid { 
         grid-template-columns: repeat(2, 1fr); 
-        gap: 20px; /* Gapni biroz kichraytiramiz */
+        gap: 20px; 
     }
     
-    /* FEATURES HEADER */
+    /* --- 6. FEATURES HEADER --- */
     .features-header-content {
         flex-direction: column;
         text-align: center;
@@ -780,85 +1054,103 @@ a:hover {
     }
     .features-image-container {
         order: 1;
-        max-width: 80%; /* Rasmni planshet markazida kattaroq ko'rsatish */
+        max-width: 77%; 
         margin: 0 auto;
     }
     .features-text-content {
         order: 2;
         margin-top: 20px;
     }
+    
+    /* --- 7. CORE VALUES --- */
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
+
+
+/* KICHIK PLANSHETLAR / KATTA MOBIL (768px dan past) */
+@media (max-width: 768px) {
+    /* --- 1. TEAM DETAILS --- */
+    .team-members-list {
+        gap: 30px;
+    }
+}
+
 
 /* MOBIL TELEFONLAR UCHUN (600px gacha) */
 @media (max-width: 600px) {
-    /* CONTAINER: Mobil uchun chekkalarni biroz kamaytirish mumkin */
+    
+    /* --- 1. GLOBAL & HEADER --- */
     .container {
         padding: 0 10px;
     }
     
-    /* HEADERNI TO'G'RILASH */
     .header {
-        flex-direction: row; /* Header ichida logo, actions qatori bo'lishi kerak */
+        display: flex;
         justify-content: space-between;
-        align-items: center;
         padding: 15px 0;
     }
-    /* Logo kichik ekranlarda sarlavhasini yo'qotishi mumkin */
     .logo {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .header-actions {
-        /* Ovoz tugmasi va menyu tugmasi yonma-yon */
-        flex-direction: row; 
-        justify-content: flex-end;
-        align-items: center;
-        width: auto;
-        margin-top: 0;
+        /* Tartibni teskari qilish */
+        flex-direction: row-reverse; 
+        /* Tugmalar orasidagi masofani oshirish */
+        gap: 30px; 
     }
     .btn-sound-control {
-        min-width: auto; /* Avtomatik kenglik */
-        padding: 8px 12px;
-        font-size: 0.8rem;
+        min-width: auto; 
+        
+        /* MUHIM: Matnni sig'dirish uchun padding va font-size optimallashtirildi */
+        padding: 6px 14px; 
+        white-space: nowrap; 
+        font-size: 0.75rem; 
     }
 
-    /* HERO SECTION */
+    /* --- 2. HERO SECTION --- */
     .hero-left h1 { 
-        font-size: 1.8rem; /* Mobil uchun optimal sarlavha o'lchami */
+        font-size: 1.8rem; 
     }
     .hero-section p {
         font-size: 0.9rem;
     }
     .cta-row { 
         flex-direction: column; 
-        gap: 10px; /* Tugmalar orasidagi bo'shliq */
+        gap: 10px; 
     }
     .btn, .btn-primary, .btn-secondary { 
         width: 100%; 
-        /* Tugmalarni to'liq kenglikda bir-birining ustida joylashtirish */
     }
     .hero-right { 
-        width: 100%; 
-        padding: 0 15px; /* Hero-right rasmiga padding qo'shish */
+        display: none; 
     }
     
-    /* GRID TIZIMLARI (barchasi bitta ustunga o'tadi) */
-    .grid, .course-grid, .resources-grid, .career-grid { 
+    /* --- 3. GRID TIZIMLARI (Barchasi bitta ustunda) --- */
+    .grid, .course-grid, .resources-grid, .career-grid, .values-grid { 
         grid-template-columns: 1fr; 
-        gap: 20px; /* Cardlar orasidagi bo'shliqni kamaytirish */
+        gap: 20px; 
     }
     
-    /* STATS: Mobil uchun 2 ustunda qoldirish samaraliroq bo'lishi mumkin */
+    /* --- 4. STATS --- */
     .stats-grid { 
         grid-template-columns: 1fr 1fr; 
-        gap: 15px; /* Joyni tejash */
+        gap: 15px; 
     }
     .stat-item h3 { 
-        font-size: 2.5rem; /* Stats o'lchamini kichraytiramiz */
+        font-size: 2.2rem; 
     }
-
-    /* FEATURES */
+    
+    /* --- 5. FEATURES & STORY --- */
     .features-image-container {
         max-width: 90%; 
+        width: 90%;
+    }
+
+    .story-image img {
+        max-width: 70%;
+        width: 75%;
     }
 }

@@ -61,14 +61,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <img src="../images/MN-Favicon.avif" alt="MN IT Academy Logo" width="24" height="24">MN IT Academy
             </a>
             
-            <nav class="nav">
-                <a href="./index.html" class="active-link">Bosh sahifa</a>
+            <nav class="nav" id="main-nav"> <a href="./index.html" class="active-link">Bosh sahifa</a>
                 <a href="#afzalliklar">Afzalliklar</a>
                 <a href="#kurslar">Kurslar</a>
                 <a href="#kasblar">Kasblar</a>
                 <a href="#resurslar">Resurslar</a>
                 <a href="#haqida">Haqida</a>
-                <a href="#aloqa">Aloqa</a>
+                <a href="#boglanish">Bog'lanish</a>
             </nav>
             
             <div class="header-actions">
@@ -76,6 +75,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     🔇 Ovozni yoqish
                 </button>
             </div>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menyuni ochish">
+                <i class="fa fa-bars"></i> 
+            </button>
             
         </header>
     </div>
@@ -292,6 +295,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
+<section class="cta-banner">
+    <div class="container">
+        <h2>IT Sohasidagi Kelajagingiz Sizdan Bir Qadam Nari!</h2>
+        <p>Hozir ro'yxatdan o'ting va o'zingiz uchun eng mos yo'nalishni topish uchun bepul testni boshlang.</p>
+        <a href="./pages/register.html" class="btn btn-cta-blue">Bepul Karyerani Boshlash</a>
+    </div>
+</section>
+
 <section id="resurslar" class="online-resources-section">
     <div class="container">
         <div class="section-title">
@@ -376,11 +387,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
-<section id="aloqa" class="cta-banner">
+<section id="haqida" class="story-section">
     <div class="container">
-        <h2>IT Sohasidagi Kelajagingiz Sizdan Bir Qadam Nari!</h2>
-        <p>Hozir ro'yxatdan o'ting va o'zingiz uchun eng mos yo'nalishni topish uchun bepul testni boshlang.</p>
-        <a href="./pages/register.html" class="btn btn-cta-blue">Bepul Karyerani Boshlash</a>
+        
+        <div class="story-content-wrapper">
+            
+            <div class="story-image">
+                <img src="./images/MN-IT-Academy-logo.avif" alt="Free Gamer Studio jamoasi" width="470" height="470">
+            </div>
+
+            <div class="story-text">
+                <h2>Noldan qahramonlikkacha: Bizning sayohatimiz</h2>
+                
+                <p>2026-yilda kichik bir fikr uchqunidan, ikki nafar fidoyi IT sohasi ishqibozlari tomonidan asos solingan MN IT Academy qisqa vaqt ichida raqobatbardosh bilimlar va chuqur hikoyalar chegaralarini kengaytiruvchi kuchga aylandi.</p>
+                
+                <p>Bizning missiyamiz oddiy: har bir o'quvchi qahramon bo‘la oladigan dunyolarni yaratish. Biz shaffoflikka, hamjamiyat asosidagi rivojlanishga va eng muhimi, o‘quv jarayonlari haqiqatan ham qiziqarli bo‘lgan kurslarni yaratishga ishonamiz.</p>
+                
+                <p>Bugungi kunda bizning jamoamiz ikki qit'ani qamrab olgan bo‘lib, raqamli chegara uchun ishtiyoq birlashtirib turadi.</p>
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="core-values-section">
+    <div class="container">
+        
+        <div class="section-title">
+            <h2>Bizning Asosiy Qadriyatlarimiz</h2>
+            <p>Bizning har bir qarorimiz va loyihamiz quyidagi asosiy tamoyillarga asoslanadi.</p>
+        </div>
+        
+        <div class="values-grid">
+            
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-users"></i> </div>
+                <h3>Hamjamiyat Birinchi</h3>
+                <p>Biz o‘quvchilarimizni tinglaymiz va hamjamiyatni rivojlanish jarayonining har bir bosqichiga faol jalb qilamiz.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-lightbulb"></i> </div>
+                <h3>Innovatsiya</h3>
+                <p>Biz noyob tajribalarni taqdim etish uchun doimiy ravishda yangi texnologiyalar va o‘quv mexanikalarini sinovdan o‘tkazamiz.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="icon">
+                    <i class="fas fa-shield-alt"></i> </div>
+                <h3>Halollik</h3>
+                <p>Halol muloqot va adolatli o‘qish, biz qilayotgan har bir ishning asosidir. Biz hamjamiyatga to‘liq shaffoflikni taqdim etamiz.</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="team-details-section">
+    <div class="container">
+        
+        <div class="section-title">
+            <h2>Bizning Jamoamiz</h2>
+            <p>MN IT Academy loyihasini yaratuvchi va boshqaruvchi fidoyi jamoa a'zolari.</p>
+        </div>
+        
+        <div class="team-members-list">
+            
+            <div class="member-card">
+                <img src="./images/murodbeks-avatar.jpg" alt="Murodbek Tuychiyev rasmi" class="member-avatar" width="80" height="80">
+                <h4>Murodbek Tuychiyev</h4>
+                <p>CEO & Front-End Developer</p>
+            </div>
+            
+            <div class="member-card">
+                <img src="./images/niginas-avatar.jpg" alt="Nigina Nurmamatova rasmi" class="member-avatar" width="80" height="80">
+                <h4>Nigina Nurmamatova</h4>
+                <p>CEO & QA Engineer</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="boglanish" class="cta-banner">
+    <div class="container">
+        <h2>Qani Keling, Hoziroq Kurslarni Boshlaymiz!</h2>
+        <p>Hoziroq ro'yxatdan o'ting va intensiv kurslarimizni o'rganishni boshlang.</p>
+        <a href="./pages/register.html" class="btn btn-cta-blue">Kurslarni boshlash</a>
     </div>
 </section>
 
