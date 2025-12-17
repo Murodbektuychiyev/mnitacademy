@@ -74,6 +74,14 @@ For questions or collaboration:
 
 ---
 
+### LinkedIn Team
+
+* [Nigina Nurmamatova](https://www.linkedin.com/in/nigina-nurmamatova-b0b270364)
+* [Murodbek Tuychiyev](https://www.linkedin.com/in/murodbek-tuychiyev-326b59315)
+* [Oyimhol Tojiyeva](https://www.linkedin.com/in/oyimxol-tojiyeva-828b5a395)
+  
+---
+
 ## 📄 License
 
 This project is for educational and demonstration purposes.
