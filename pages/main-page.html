@@ -1,27 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asosiy sahifa - MN IT Academy</title>
-
-    <meta name="author" content="MN IT Academy, Murodbek Tuychiyev, Nigina Nurmamatova">
-    
-    <meta name="robots" content="noindex, nofollow">
-    
-    <meta property="og:title" content="Asosiy sahifa - MN IT Academy">
-    <meta property="og:url" content="https://mnitacademy.vercel.app/pages/main-page.html">
-    <meta property="og:image" content="https://mnitacademy.vercel.app/images/MN-Favicon.avif">
-    <meta property="og:type" content="website">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/png" href="../images/favicon.png">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <title>MN IT Academy - Dashboard</title>
     <link rel="stylesheet" href="../css/main-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    
+
+    <div class="header-wrapper">
+        <div class="container header-container">
+            <div class="header-left">
+                <div class="hamburger-menu" id="mobile-menu-btn" style="display: none; cursor: pointer; margin-right: 15px;">
+                    <i class="fa-solid fa-bars" style="font-size: 24px;"></i>
+                </div>
+                
+                <div class="logo-box">
+                    <img src="../images/favicon.png" alt="MN IT Academy Logo" class="logo-img">
+                </div>
+                <div class="header-text">
+                    <h1>Xush kelibsiz, Sardor Aliyev!</h1>
+                    <p>O'quv platformasiga kirganingizdan xursandmiz</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul style="display: flex; list-style: none; gap: 20px;">
+                    <li><a href="#" style="text-decoration: none; color: inherit; font-weight: 500;">Asosiy</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit; font-weight: 500;">Kurslar</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit; font-weight: 500;">Testlar</a></li>
+                </ul>
+            </nav>
+
+            <button id="dark-mode-toggle" class="btn-secondary" style="background: none; border: 1px solid var(--border-color); padding: 8px; border-radius: 10px; cursor: pointer;">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+            <div class="header-right">
+                <button class="btn-primary">Dashboard</button>
+                <img src="https://i.pravatar.cc/150?u=sardor" alt="User" class="user-avatar">
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Kasbingizni toping – kelajagingizni yarating</h1>
+                    <p>Shaxsiyligingizga mos kasb yo'llarini aniqlash uchun birinchi qadamni qo'ying.</p>
+                    <button class="hero-btn">Boshlash</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section steps-section">
+            <div class="steps-header">
+                <h2 class="section-title">Muvaffaqiyatga 4 qadam</h2>
+            </div>
+            
+            <div class="grid-layout steps-grid">
+                <div class="card step-card">
+                    <div class="step-number">1</div>
+                    <div class="icon-box icon-blue">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3>Test topshirish</h3>
+                    <p>O‘zingizning qobiliyatlaringizni aniqlang.</p>
+                </div>
+
+                <div class="card step-card">
+                    <div class="step-number">2</div>
+                    <div class="icon-box icon-green">
+                        <i class="fa-regular fa-circle-check"></i>
+                    </div>
+                    <h3>Kasb tanlash</h3>
+                    <p>Natijalar asosida mos kasblarni toping.</p>
+                </div>
+
+                <div class="card step-card">
+                    <div class="step-number">3</div>
+                    <div class="icon-box icon-purple">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <h3>CV yaratish</h3>
+                    <p>Professional rezyume tayyorlang.</p>
+                </div>
+
+                <div class="card step-card">
+                    <div class="step-number">4</div>
+                    <div class="icon-box icon-orange">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3>Ishga ariza berish</h3>
+                    <p>Orzuingizdagi ishga yo‘l oling.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Tez Harakatlar</h2>
+            <div class="grid-layout">
+                <div class="card">
+                    <div class="icon-box icon-blue"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>Testlarni Boshlash</h3>
+                    <p>Professional IT testlarini topshiring</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box icon-green"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>Kurslarni Ko'rish</h3>
+                    <p>Yangi kurslarni o'rganing</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box icon-purple"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Kasb Tavsiyasi</h3>
+                    <p>O'zingizga mos kasbni toping</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box icon-orange"><i class="fa-solid fa-table-cells-large"></i></div>
+                    <h3>Mening Dashboardim</h3>
+                    <p>Statistika va yutuqlar</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Mashhur Kurslar</h2>
+            <div class="grid-layout">
+                <div class="card course-card">
+                    <div class="icon-box icon-blue"><i class="fa-solid fa-desktop"></i></div>
+                    <h3>Frontend Development</h3>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 1250</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                </div>
+                <div class="card course-card">
+                    <div class="icon-box icon-green"><i class="fa-solid fa-server"></i></div>
+                    <h3>Backend Development</h3>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 980</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                    </div>
+                </div>
+                <div class="card course-card">
+                    <div class="icon-box icon-purple"><i class="fa-solid fa-palette"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 850</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                </div>
+                <div class="card course-card">
+                    <div class="icon-box icon-orange"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Data Science</h3>
+                    <div class="card-stats">
+                        <span><i class="fa-solid fa-users"></i> 720</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.6</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">O'quv Yo'nalishlari</h2>
+            <div class="grid-layout">
+                <div class="card track-card">
+                    <div class="icon-box icon-blue"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React va Node.js</p>
+                    <div class="card-stats">
+                        <span><i class="fa-regular fa-clock"></i> 6 oy</span>
+                        <span><i class="fa-solid fa-book"></i> 12 kurs</span>
+                    </div>
+                </div>
+                <div class="card track-card">
+                    <div class="icon-box icon-green"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Mobile Development</h3>
+                    <p>React Native va Flutter</p>
+                    <div class="card-stats">
+                        <span><i class="fa-regular fa-clock"></i> 5 oy</span>
+                        <span><i class="fa-solid fa-book"></i> 10 kurs</span>
+                    </div>
+                </div>
+                <div class="card track-card">
+                    <div class="icon-box icon-purple"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Python, TensorFlow va Data Science</p>
+                    <div class="card-stats">
+                        <span><i class="fa-regular fa-clock"></i> 8 oy</span>
+                        <span><i class="fa-solid fa-book"></i> 15 kurs</span>
+                    </div>
+                </div>
+                <div class="card track-card">
+                    <div class="icon-box icon-red"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Cybersecurity</h3>
+                    <p>Network Security va Ethical Hacking</p>
+                    <div class="card-stats">
+                        <span><i class="fa-regular fa-clock"></i> 7 oy</span>
+                        <span><i class="fa-solid fa-book"></i> 13 kurs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section testimonial-section">
+            <h2 class="section-title centered-title">O'quvchilar Fikri</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar-wrapper">
+                        <img src="https://i.pravatar.cc/150?u=aziza" alt="Aziza" class="testimonial-avatar">
+                    </div>
+                    <p class="testimonial-quote">"MN IT Academy orqali dasturlashni o'rgandim. Endi professional kompaniyada ishlayman!"</p>
+                    <h4 class="student-name">Aziza Karimova</h4>
+                    <p class="student-job">Frontend Developer</p>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Yaqinlashayotgan Tadbirlar</h2>
+            <div class="grid-layout">
+                <div class="card event-card">
+                    <div class="event-header">
+                        <div class="icon-box icon-blue"><i class="fa-solid fa-video"></i></div>
+                        <span class="tag tag-online">Online</span>
+                    </div>
+                    <h3>Web Development Workshop</h3>
+                    <div class="event-details">
+                        <p><i class="fa-regular fa-calendar"></i> 2025-01-15</p>
+                        <p><i class="fa-regular fa-clock"></i> 14:00</p>
+                        <p><i class="fa-solid fa-user-group"></i> 50 o'rin</p>
+                    </div>
+                    <button class="btn-full">Ro'yxatdan o'tish</button>
+                </div>
+                <div class="card event-card">
+                    <div class="event-header">
+                        <div class="icon-box icon-purple"><i class="fa-solid fa-users-rectangle"></i></div>
+                        <span class="tag tag-offline">Offline</span>
+                    </div>
+                    <h3>AI Seminar</h3>
+                    <div class="event-details">
+                        <p><i class="fa-regular fa-calendar"></i> 2025-01-20</p>
+                        <p><i class="fa-regular fa-clock"></i> 16:00</p>
+                        <p><i class="fa-solid fa-user-group"></i> 30 o'rin</p>
+                    </div>
+                    <button class="btn-full">Ro'yxatdan o'tish</button>
+                </div>
+                <div class="card event-card">
+                    <div class="event-header">
+                        <div class="icon-box icon-green"><i class="fa-solid fa-briefcase"></i></div>
+                        <span class="tag tag-hybrid">Hybrid</span>
+                    </div>
+                    <h3>Career Fair</h3>
+                    <div class="event-details">
+                        <p><i class="fa-regular fa-calendar"></i> 2025-01-25</p>
+                        <p><i class="fa-regular fa-clock"></i> 10:00</p>
+                        <p><i class="fa-solid fa-user-group"></i> 100 o'rin</p>
+                    </div>
+                    <button class="btn-full">Ro'yxatdan o'tish</button>
+                </div>
+                <div class="card event-card">
+                    <div class="event-header">
+                        <div class="icon-box icon-orange"><i class="fa-solid fa-trophy"></i></div>
+                        <span class="tag tag-offline">Offline</span>
+                    </div>
+                    <h3>Hackathon 2025</h3>
+                    <div class="event-details">
+                        <p><i class="fa-regular fa-calendar"></i> 2025-02-01</p>
+                        <p><i class="fa-regular fa-clock"></i> 09:00</p>
+                        <p><i class="fa-solid fa-user-group"></i> 80 o'rin</p>
+                    </div>
+                    <button class="btn-full">Ro'yxatdan o'tish</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <p>&copy; <span id="year"></span> MN IT Academy. Barcha huquqlar himoyalangan.</p>
+                <div class="footer-links">
+                    <a href="#">Xizmat ko'rsatish shartlari</a>
+                    <span class="divider">|</span>
+                    <a href="#">Maxfiylik siyosati</a>
+                </div>
+            </div>
+        </footer>
+
+    </div> 
+
+    <script>
+        // Avtomatik yilni yangilash
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // HAMBURGER LOGIKASI
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            if (navMenu.style.display === 'block') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'block';
+            }
+        });
+
+        // Ekran o'lchamini kuzatish (Media Query o'rniga vaqtinchalik yechim)
+        function checkWidth() {
+            if (window.innerWidth <= 768) {
+                menuBtn.style.display = 'block';
+                navMenu.style.display = 'none'; // Default yopiq mobil versiyada
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.backgroundColor = '#fff';
+                navMenu.style.width = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            } else {
+                menuBtn.style.display = 'none';
+                navMenu.style.display = 'block';
+                navMenu.style.position = 'static';
+                navMenu.style.boxShadow = 'none';
+            }
+        }
+
+        window.addEventListener('resize', checkWidth);
+        checkWidth(); // Sahifa yuklanganda tekshirish
+    </script>
+
+    <script src="../js/main-page.js"></script>
+
 </body>
 </html>

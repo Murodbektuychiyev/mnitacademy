@@ -16,7 +16,6 @@
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -851,11 +850,11 @@ a:hover {
 
 .team-details-section {
     padding: 10px 0 25px 0;
-    text-align:center;
+    text-align: center;
 }
 
 .team-members-list {
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 20px; 
     flex-wrap: wrap;
@@ -867,7 +866,6 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
-    cursor: default;
     max-width: 310px;
     display: flex;
     flex-direction: column;
@@ -897,7 +895,6 @@ a:hover {
     border-color: var(--secondary-color); 
     transform: scale(1.15) rotate(-3deg); 
     box-shadow: 0 0 0 10px #3567C7
-
 }
 
 .member-card h4 {
