@@ -1,4 +1,7 @@
-/* 1. O'ZGARUVCHILAR VA ASOSIY SOZLAMALAR */
+/* =====================================================
+   1. O'ZGARUVCHILAR VA ASOSIY SOZLAMALAR SECTION STILI
+   ===================================================== */
+
 :root {
     --bg-dark: #050811;
     --card-bg: #0f172a;
@@ -33,7 +36,10 @@ body {
     padding: 0 20px;
 }
 
-/* 2. HEADER-WRAPPER VA NAV-MENU */
+/* ============================================
+   2. HEADER-WRAPPER VA NAV-MENU SECTION STILI
+   ============================================ */
+
 .header-wrapper {
     background: rgba(5, 8, 17, 0.85);
     backdrop-filter: blur(16px);
@@ -86,7 +92,9 @@ body {
     transition: var(--transition);
 }
 
-/* NAV MENU LINKLARIGA ORQA FONLI HOVER BERISH */
+/* =============================================================
+   3. NAV MENU LINKLARIGA ORQA FONLI HOVER BERISH SECTION STILI
+   ============================================================= */
 
 .nav-menu ul li a {
     color: var(--text-gray);
@@ -97,19 +105,14 @@ body {
     border-radius: 14px;
     transition: var(--transition);
     display: block;
-    border: 1px solid var(--border-soft); /* Avvaldan nozik chegara */
-    
-    /* 🟢 HOVERDAN AVVALGI SOYA (Rootdan olingan) */
+    border: 1px solid var(--border-soft);
     box-shadow: 0 4px 12px var(--shadow-color); 
-    background: rgba(255, 255, 255, 0.02); /* Juda xira fon */
+    background: rgba(255, 255, 255, 0.02);
 }
 
-/* 🔵 HOVER HOLATI (Dashboarddan farqli va interaktiv) */
 .nav-menu ul li a:hover {
-    background-color: rgba(59, 130, 246, 0.15); /* Shaffof ko'k fon */
-    color: var(--primary); /* Matn ko'k */
-    
-    /* Hover bo'lganda soya ko'k rangga o'zgaradi va kengayadi */
+    background-color: rgba(59, 130, 246, 0.15);
+    color: var(--primary);
     box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25); 
     transform: translateY(-3px);
     border-color: rgba(59, 130, 246, 0.3);
@@ -145,7 +148,11 @@ body {
     object-fit: cover;
 }
 
-/* 3. HERO-SECTION */
+
+/* ======================
+   4. HERO SECTION STILI
+   ====================== */
+
 .hero-section {
     padding: 60px 0;
     filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
@@ -200,7 +207,10 @@ body {
     box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
 }
 
-/* 4. CARDS VA GRID-LAYOUT */
+/* ======================================
+   5. CARDS VA GRID-LAYOUT SECTION STILI
+   ====================================== */
+
 .section {
     margin-bottom: 80px;
 }
@@ -247,10 +257,25 @@ body {
     margin-bottom: 20px;
 }
 
-.icon-blue { background: rgba(59, 130, 246, 0.1); color: #60a5fa; }
-.icon-green { background: rgba(16, 185, 129, 0.1); color: #34d399; }
-.icon-purple { background: rgba(168, 85, 247, 0.1); color: #c084fc; }
-.icon-orange { background: rgba(245, 158, 11, 0.1); color: #fbbf24; }
+.icon-blue {
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+}
+
+.icon-green {
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+}
+
+.icon-purple {
+    background: rgba(168, 85, 247, 0.1);
+    color: #c084fc;
+}
+
+.icon-orange {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+}
 
 .step-card {
     position: relative;
@@ -265,7 +290,10 @@ body {
     color: rgba(255, 255, 255, 0.453);
 }
 
-/* 5. COURSE CARDS */
+/* ==============================
+   6. COURSE CARDS SECTION STILI
+   ============================== */
+
 .course-card .card-stats {
     display: flex;
     justify-content: space-between;
@@ -295,94 +323,88 @@ body {
     border-color: var(--primary);
 }
 
-/* 6. TESTIMONIALS (TEAM) SECTION - ENLARGED VERSION */
+/* =============================
+   7. TESTIMONIAL SECTION STILI
+   ============================= */
 
-/* Umumiy konteyner */
 .testimonial-container {
     display: flex;
     flex-direction: column;
     align-items: center;    
-    gap: 60px;              /* Kartalar orasidagi masofa oshirildi */
-    padding: 20px 0;      /* Yuqori va pastki bo'shliq kattaroq */
-    max-width: 1400px;    /* Konteyner kengaytirildi */
+    gap: 60px;
+    padding: 20px 0;
+    max-width: 1400px;
     margin: 0 auto;
     filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
 }
 
-/* Barcha kartalar uchun umumiy stil */
 .testimonial-card {
     background: #0f172a;
-    padding: 50px;          /* Ichki bo'shliq oshirildi */
-    border-radius: 40px;    /* Burchaklar yanada yumshoq */
+    padding: 50px;
+    border-radius: 40px;
     text-align: center;
     border: 1px solid var(--border);
-    max-width: 963px;       /* Oddiy kartalar kengaytirildi */
+    max-width: 963px;
     width: 100%;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
-/* ASILBEK SEVINOV (OXIRGI KARTA) - MEGA KARTA */
 .testimonial-card:last-of-type {
-    max-width: 1200px;      /* Maksimal kenglik (Premium ko'rinish) */
+    max-width: 1200px;
     background: linear-gradient(145deg, #162036 0%, #080d1a 100%);
     border: 2px solid var(--primary); 
-    padding: 100px 80px;    /* Judayam yirik padding */
+    padding: 100px 80px;
     box-shadow: 0 40px 80px rgba(59, 130, 246, 0.25); 
-    transform: scale(1.02); /* Biroz kattalashtirish */
+    transform: scale(1.02);
 }
 
-/* Tirnoq belgisi (Kattaroq va chiroyli) */
 .testimonial-card:last-of-type::before {
     content: '“';
     position: absolute;
     top: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 150px;       /* Tirnoq judayam yirik */
+    font-size: 150px;
     font-family: 'Georgia', serif;
     color: var(--primary);
     opacity: 0.15;
     line-height: 1;
 }
 
-/* 6. TESTIMONIAL HOVER EFFEKTLARI */
+/* =============================================
+   8. TESTIMONIAL HOVER EFFEKTLAR SECTION STILI
+   ============================================= */
 
-/* 1. Karta hover bo'lganda ko'tarilishi */
 .testimonial-card:hover {
-    transform: translateY(-15px); /* Yuqoriga ko'tarilish */
-    border-color: var(--primary);  /* Hoshiya rangi ko'k bo'ladi */
-    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.15); /* Yumshoq nur */
+    transform: translateY(-15px);
+    border-color: var(--primary);
+    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.15);
 }
 
-/* 2. Mega karta (Asilbek Sevinov) uchun maxsus hover */
 .testimonial-card:last-of-type:hover {
-    transform: scale(1.04) translateY(-10px); /* Kattalashish va ko'tarilish birlashadi */
-    box-shadow: 0 50px 100px rgba(59, 130, 246, 0.3); /* Kuchliroq nurlanish */
-    background: linear-gradient(145deg, #1a2744 0%, #080d1a 100%); /* Fon biroz yorishadi */
+    transform: scale(1.04) translateY(-10px);
+    box-shadow: 0 50px 100px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(145deg, #1a2744 0%, #080d1a 100%);
 }
 
-/* 3. Hover bo'lganda avatar biroz kattalashishi */
 .testimonial-card:hover .testimonial-avatar {
-    transform: scale(1.1) rotate(3deg); /* Kattalashadi va biroz qiyshayadi */
-    border-color: #fff; /* Avatar hoshiyasi oq bo'ladi */
+    transform: scale(1.1) rotate(3deg);
+    border-color: #fff;
     transition: var(--transition);
 }
 
-/* 4. Tirnoq belgisi hoverda yorqinlashishi */
 .testimonial-card:last-of-type:hover::before {
-    opacity: 0.4;        /* Tirnoq aniqroq ko'rinadi */
-    top: 20px;           /* Biroz pastga tushadi */
+    opacity: 0.4;
+    top: 20px;
     transition: all 0.5s ease;
 }
 
-/* 5. Matn (Quote) hoverda biroz oqarishi */
 .testimonial-card:hover .testimonial-quote {
     color: #fff;
     transition: var(--transition);
 }
 
-/* Avatar sozlamalari */
 .testimonial-avatar {
     width: 200px;
     height: 200px;
@@ -393,32 +415,28 @@ body {
     margin-bottom: 30px;
 }
 
-/* Oxirgi karta avatari (Haqiqiy lider ko'rinishi) */
 .testimonial-card:last-of-type .testimonial-avatar {
-    width: 180px;           /* Asosiy avatar judayam yirik */
+    width: 180px;
     height: 180px;
     border-width: 5px;
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
 }
 
-/* Iqtibos matni */
 .testimonial-quote {
-    font-size: 18px;        /* Matn kattaroq */
+    font-size: 18px;
     color: var(--text-gray);
     font-style: italic;
     margin-bottom: 35px;
     line-height: 1.8;
 }
 
-/* Oxirgi karta iqtibos matni (Diqqat markazida) */
 .testimonial-card:last-of-type .testimonial-quote {
-    font-size: 1.8rem;      /* ~28px-30px matn */
+    font-size: 1.8rem;
     color: #fff;
     max-width: 950px;
     font-weight: 500;
 }
 
-/* Ism va Lavozim */
 .ceo-name {
     font-size: 22px;
     font-weight: 800;
@@ -427,7 +445,7 @@ body {
 }
 
 .testimonial-card:last-of-type .ceo-name {
-    font-size: 32px;        /* Ism judayam yirik */
+    font-size: 32px;
 }
 
 .ceo-job {
@@ -435,21 +453,13 @@ body {
     color: var(--primary);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 3px;    /* Harflar orasidagi masofa */
+    letter-spacing: 3px;
 }
 
-/* Mobil qurilmalar uchun moslashuv */
-@media (max-width: 768px) {
-    .testimonial-card:last-of-type {
-        transform: scale(1);
-        padding: 40px 20px;
-    }
-    
-    .testimonial-card:last-of-type .testimonial-quote {
-        font-size: 1.1rem;
-    }
-}
-/* 7. EVENT CARDS */
+/* =============================
+   9. EVENT CARDS SECTION STILI
+   ============================= */
+
 .event-header {
     display: flex;
     justify-content: space-between;
@@ -464,9 +474,20 @@ body {
     text-transform: uppercase;
 }
 
-.tag-online { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-.tag-offline { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
-.tag-hybrid { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+.tag-online {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+.tag-offline {
+    background: rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+}
+
+.tag-hybrid {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
 
 .event-details {
     margin: 20px 0;
@@ -481,7 +502,10 @@ body {
     margin-bottom: 8px;
 }
 
-/* 8. FOOTER */
+/* =========================
+   10. FOOTER SECTION STILI
+   ========================= */
+
 .footer {
     padding: 50px 0;
     border-top: 1px solid var(--border);
@@ -499,10 +523,12 @@ body {
     font-size: 14px;
 }
 
-/* 8. FOOTER LINK HOVER EFFEKTI */
+/* ===========================================
+   11. FOOTER LINK HOVER EFFEKT SECTION STILI
+   =========================================== */
 
 .footer-links a {
-    color: var(--text-gray); /* Odatiy holatda kulrang */
+    color: var(--text-gray);
     text-decoration: none;
     transition: var(--transition);
     font-size: 14px;
@@ -511,16 +537,11 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--primary); /* Hardoimgi ko'k rang */
-    
-    /* Matnga nozik ko'k nurlanish beradi */
+    color: var(--primary);
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.4); 
-    
-    /* Linkni biroz o'ngga yoki tepaga jildirish (ixtiyoriy) */
     transform: translateX(3px); 
 }
 
-/* Agar footer linklari tagida chiziq paydo bo'lishini xohlasangiz: */
 .footer-links a::after {
     content: '';
     position: absolute;
@@ -536,7 +557,6 @@ body {
     width: 100%;
 }
 
-/* SLIDER CONTROLS (CSS-da faqat vizual qismi) */
 .slider-controls {
     display: flex;
     justify-content: center;
@@ -567,4 +587,19 @@ body {
     background: var(--primary);
     width: 24px;
     border-radius: 10px;
+}
+
+/* ==========================================
+   12. RESPONSIVE MEDIA QUERIES SECTION STILI
+   ========================================== */
+
+@media (max-width: 768px) {
+    .testimonial-card:last-of-type {
+        transform: scale(1);
+        padding: 40px 20px;
+    }
+    
+    .testimonial-card:last-of-type .testimonial-quote {
+        font-size: 1.1rem;
+    }
 }
