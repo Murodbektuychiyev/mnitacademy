@@ -589,17 +589,171 @@ body {
     border-radius: 10px;
 }
 
-/* ==========================================
-   12. RESPONSIVE MEDIA QUERIES SECTION STILI
-   ========================================== */
+/* ==========================================================================
+    YAKUNIY IDEAL RESPONSIVE SYSTEM (MN IT ACADEMY) - FULL FIXED
+   ========================================================================== */
 
-@media (max-width: 768px) {
-    .testimonial-card:last-of-type {
-        transform: scale(1);
-        padding: 40px 20px;
-    }
+/* 1. DESKTOPDA HAMBURGERNI YASHIRISH */
+#mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Silliq o'tish uchun */
+}
+
+/* 2. MOBIL VERSIYA (768px dan past) */
+@media screen and (max-width: 768px) {
     
-    .testimonial-card:last-of-type .testimonial-quote {
-        font-size: 1.1rem;
+    /* --- HEADER QISMI --- */
+    .header-container {
+        display: flex !important;
+        flex-direction: row !important; 
+        align-items: center !important; 
+        justify-content: flex-start !important;
+        height: 65px !important;
+        padding: 0 15px;
+        gap: 15px; 
+    }
+
+    #mobile-menu-btn {
+        display: block !important;
+        padding: 5px;
+        order: 0; 
+        z-index: 10001; /* Menyu ustida ko'rinishi uchun */
+    }
+
+    /* Ikonka animatsiyasi */
+    #mobile-menu-btn i {
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+        display: inline-block;
+    }
+
+    /* Menyu ochiq holatda ikonka stili */
+    #mobile-menu-btn i.fa-xmark {
+        transform: rotate(90deg); /* 90 daraja aylanib chiqadi */
+    }
+
+    .header-left {
+        display: flex !important;
+        flex-direction: row !important; 
+        align-items: center !important;
+        gap: 10px;
+        order: 2; 
+        flex-grow: 1; 
+        min-width: 0;
+    }
+
+    .logo-box .logo-img {
+        height: 30px !important;
+        width: auto;
+    }
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+    }
+
+    .header-text h1 {
+        font-size: 13px !important;
+        margin: 0;
+        color: var(--text-white);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-text p {
+        font-size: 10px !important;
+        margin: 0;
+        color: var(--text-gray);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-right {
+        order: 3;
+    }
+
+    .user-avatar {
+        width: 35px !important;
+        height: 35px !important;
+        border: 1.5px solid var(--border);
+    }
+
+    /* --- MN IT JAMOA FIKRLARI --- */
+    .section-title {
+        font-size: 18px !important;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .testimonial-card {
+        padding: 15px !important;
+    }
+
+    .testimonial-quote {
+        font-size: 12px !important;
+        line-height: 1.5;
+    }
+
+    .testimonial-info h4 {
+        font-size: 13px !important;
+    }
+
+    .testimonial-info p {
+        font-size: 10px !important;
+    }
+
+    /* --- SIDEBAR NAV --- */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%; 
+        width: 260px;
+        height: 100vh;
+        background: var(--card-bg);
+        border-right: 1px solid var(--border);
+        padding: 80px 20px;
+        transition: var(--transition);
+        z-index: 9999;
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .nav-menu.active { left: 0; }
+    .nav-menu ul { flex-direction: column; gap: 20px; list-style: none; }
+
+    /* --- GRID --- */
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 20px 10px;
+    }
+
+    .card { padding: 15px !important; }
+    .card h3 { font-size: 14px; }
+    .card p { font-size: 11px; }
+
+    /* --- FOOTER --- */
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-content p, .footer-links a {
+        font-size: 10px !important;
+        color: var(--text-gray);
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 }

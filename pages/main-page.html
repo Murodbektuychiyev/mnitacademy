@@ -23,7 +23,7 @@
                     <img src="../images/favicon.png" alt="MN IT Academy Logo" class="logo-img">
                 </div>
                 <div class="header-text">
-                    <h1>Xush kelibsiz, foydalanuvchi!</h1>
+                    <h1 id="user-greeting">Xush kelibsiz!</h1>
                     <p>O'quv platformasiga kirganingizdan xursandmiz</p>
                 </div>
             </div>
@@ -37,7 +37,7 @@
             </nav>
 
             <div class="header-right">
-                <button class="btn-primary">Dashboard</button>
+                <button class="btn-primary">Profil</button>
                 <img src="../images/user-avatar.avif" alt="User" class="user-avatar">
             </div>
         </div>
@@ -299,46 +299,7 @@
 
     </div> 
 
-    <script>
-        // Avtomatik yilni yangilash
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // HAMBURGER LOGIKASI
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-
-        menuBtn.addEventListener('click', () => {
-            if (navMenu.style.display === 'block') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'block';
-            }
-        });
-
-        // Ekran o'lchamini kuzatish (Media Query o'rniga vaqtinchalik yechim)
-        function checkWidth() {
-            if (window.innerWidth <= 768) {
-                menuBtn.style.display = 'block';
-                navMenu.style.display = 'none'; // Default yopiq mobil versiyada
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '70px';
-                navMenu.style.backgroundColor = '#fff';
-                navMenu.style.width = '100%';
-                navMenu.style.left = '0';
-                navMenu.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-            } else {
-                menuBtn.style.display = 'none';
-                navMenu.style.display = 'block';
-                navMenu.style.position = 'static';
-                navMenu.style.boxShadow = 'none';
-            }
-        }
-
-        window.addEventListener('resize', checkWidth);
-        checkWidth(); // Sahifa yuklanganda tekshirish
-    </script>
-
-    <script src="../js/main-page.js"></script>
+    <script type="module" src="../js/main-page.js"></script>
 
 </body>
 </html>
