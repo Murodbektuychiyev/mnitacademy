@@ -589,9 +589,9 @@ body {
     border-radius: 10px;
 }
 
-/* ==========================================================================
-    YAKUNIY IDEAL RESPONSIVE SYSTEM (MN IT ACADEMY) - FULL FIXED
-   ========================================================================== */
+/* ============================================
+   12.  RESPONSIVE MEDIA QUERIES SECTION STILI
+   ============================================ */
 
 /* 1. DESKTOPDA HAMBURGERNI YASHIRISH */
 #mobile-menu-btn {
@@ -601,7 +601,7 @@ body {
     color: var(--text-white);
     font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s ease; /* Silliq o'tish uchun */
+    transition: all 0.3s ease;
 }
 
 /* 2. MOBIL VERSIYA (768px dan past) */
@@ -622,18 +622,16 @@ body {
         display: block !important;
         padding: 5px;
         order: 0; 
-        z-index: 10001; /* Menyu ustida ko'rinishi uchun */
+        z-index: 10001;
     }
 
-    /* Ikonka animatsiyasi */
     #mobile-menu-btn i {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
         display: inline-block;
     }
 
-    /* Menyu ochiq holatda ikonka stili */
     #mobile-menu-btn i.fa-xmark {
-        transform: rotate(90deg); /* 90 daraja aylanib chiqadi */
+        transform: rotate(90deg);
     }
 
     .header-left {
@@ -685,7 +683,6 @@ body {
         border: 1.5px solid var(--border);
     }
 
-    /* --- MN IT JAMOA FIKRLARI --- */
     .section-title {
         font-size: 18px !important;
         margin-bottom: 15px;
@@ -709,7 +706,6 @@ body {
         font-size: 10px !important;
     }
 
-    /* --- SIDEBAR NAV --- */
     .nav-menu {
         position: fixed;
         top: 0;
@@ -725,19 +721,33 @@ body {
         flex-direction: column;
     }
 
-    .nav-menu.active { left: 0; }
-    .nav-menu ul { flex-direction: column; gap: 20px; list-style: none; }
+    .nav-menu.active {
+        left: 0;
+    }
 
-    /* --- GRID --- */
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+    }
+
     .grid-layout {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         padding: 20px 10px;
     }
 
-    .card { padding: 15px !important; }
-    .card h3 { font-size: 14px; }
-    .card p { font-size: 11px; }
+    .card {
+        padding: 15px !important;
+    }
+    
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card p {
+        font-size: 11px;
+    }
 
     /* --- FOOTER --- */
     .footer-content {
